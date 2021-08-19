@@ -1,8 +1,278 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: content-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+:root {
+  --white: #f5f5f5;
+  --black: #222323;
+  --red: #a82814;
+  --orange: #f56006;
+  --green: #4e9142;
+  --blue: #1c4c88;
 }
-h1{
-    color: red;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  border-bottom: 4px solid var(--black);
+}
+
+html {
+  height: 100%;
+  /* max-height: 600px; */
+  width: 100%;
+  background-image: url("assets/crowd_01.svg"), url("assets/newspaper_01a.jpg");
+  background-repeat: repeat-x;
+  background-position: 0 0, 0 0;
+  background-size: 2200px, 2000px;
+  animation: 50s para infinite linear;
+}
+
+@keyframes para {
+  0% {
+    background-position: 5000px 20%, 1000px 95%;
+  }
+  100% {
+    background-position: -5000px 20%, -1000px 95%;
+  }
+}
+
+h1 {
+  font-family: "Work Sans", sans-serif;
+  color: var(--black);
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+}
+.container .columns .column {
+  border: 2px solid var(--black);
+  padding: 25px 25px 25px 25px;
+  margin: 5px;
+  min-height: 100vh;
+  background-color: var(--white);
+  box-shadow: 2px 4px 2px 1px var(--black);
+}
+/*SVG MAIN*/
+.st0 {
+  fill: var(--white);
+}
+.st1 {
+  fill: var(--black);
+  opacity: 0.3;
+  stroke: var(--orange);
+  stroke-miterlimit: 10;
+}
+.st2 {
+  font-family: "Open Sans";
+}
+.st3 {
+  font-size: 137.7131px;
+}
+.st4 {
+  fill: var(--red);
+  stroke: var(--orange);
+  stroke-miterlimit: 10;
+}
+.st5 {
+  font-family: "SoukouMincho";
+}
+.st6 {
+  font-size: 205.0117px;
+}
+.shadow {
+  -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+.ph {
+  background-image: url("assets/physicalHealth_01.svg");
+  background-position: right bottom;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+.mh {
+  background-image: url("assets/brain_02.svg");
+  background-position: right bottom;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+.wp {
+  background-image: url("assets/workplace_01.svg");
+  background-position: right bottom;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+.ec {
+  background-image: url("assets/economy_01.svg");
+  background-position: right bottom;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+/*--------------------------------*/
+/*SECTION 1A*/
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+/* 3 columns - SECTION 2 & 3 */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*-----------------------------------------*/
+/*SVG ANIMATION*/
+.fade-in {
+  animation-delay: 3s;
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.flicker {
+  -webkit-animation: flicker 2.5s linear infinite both;
+  animation: flicker 2.5s linear infinite both;
+}
+
+@-webkit-keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  31.38% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 0;
+  }
+  33.66% {
+    opacity: 0;
+  }
+  34.12% {
+    opacity: 1;
+  }
+  34.78% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  35.19% {
+    opacity: 0;
+  }
+  35.52% {
+    opacity: 1;
+  }
+  38.98% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  39.8% {
+    opacity: 0;
+  }
+  39.12% {
+    opacity: 1;
+  }
+  82.98% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 0;
+  }
+  84.19% {
+    opacity: 0;
+  }
+  85.92% {
+    opacity: 1;
+  }
+}
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  32.98% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  34.02% {
+    opacity: 1;
+  }
+  34.98% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  35.9% {
+    opacity: 0;
+  }
+  35.92% {
+    opacity: 1;
+  }
+  38.98% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  39.8% {
+    opacity: 0;
+  }
+  39.82% {
+    opacity: 1;
+  }
+  83.98% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 0;
+  }
+  84.9% {
+    opacity: 0;
+  }
+  84.92% {
+    opacity: 1;
+  }
 }
