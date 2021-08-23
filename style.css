@@ -2,14 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
 
 :root {
-  --white1: #f5f5f5;
-  --white2: #f9f9f9;
+  --white: #f5f5f5;
   --black: #222323;
   --red: #a82814;
   --orange: #f4a24c;
   --green: #4e9142;
-  --blue: #1c4c88;
-  background-color: var(--black);
+  --blue: #0ea5e9;
+  background-color: var(--white);
 }
 
 *,
@@ -26,20 +25,20 @@ html {
 }
 section {
   min-height: 100vh;
-  box-shadow: 5px 10px 8px var(--black);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 section:nth-child(even) {
-  background-color: var(--black);
-  color: var(--white1);
+  background-color: var(--white);
 }
 section:nth-child(odd) {
-  background-color: var(--white2);
+  background-color: var(--white);
 }
 
 .header {
+  margin-top: 55px;
   transform: rotate(1.4deg);
-  border: var(--white1);
-  color: var(--white1);
+  border: var(--white);
+  color: var(--white);
   background-color: var(--red);
 }
 .content {
@@ -67,22 +66,27 @@ section:nth-child(odd) {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: var(--red);
-  color: var(--white1);
+  color: var(--red) !important;
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
 }
+
 .share {
   display: inline-block;
   width: 100%;
   text-align: center;
 }
-
+@media screen and (max-width: 600px) {
+  #bttop {
+    position: fixed;
+    left: 50%;
+  }
+}
 /*--------------------------------SECTION 1------------------------*/
 /*SVG LOGO*/
 .st0 {
-  fill: var(--white2);
+  fill: var(--white);
 }
 .st1 {
   fill: var(--black);
@@ -112,8 +116,8 @@ section:nth-child(odd) {
 }
 /*----------------------------*/
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  background: var(--white);
+  border-left: 10px solid var(--black);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -131,24 +135,23 @@ blockquote p {
 }
 
 /*----------------------------SECTION 2: TIMELINE-------------------------*/
-
-.timeline {
-  width: 100%;
-  overflow: hidden;
+.bg-image {
   background-image: url("assets/paperClippings_01.png");
+  filter: blur(25px);
   background-repeat: repeat-x;
   background-position: 0 0;
   animation: 50s para infinite linear;
-  color: var(--white2);
+  color: var(--white);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes para {
-  0% {
-    background-position: 1000px 20%;
-  }
-  100% {
-    background-position: 0px 20%;
-  }
+.timeline {
+  margin-top: -150px;
+  width: 100%;
+  overflow: hidden;
 }
 .timeline ul {
   padding: 5rem 0;
@@ -215,7 +218,7 @@ time {
   transition: all 0.5s ease-in-out;
 }
 .timeline ul li.slide-in::after {
-  background: var(--white2);
+  background: var(--white);
   border: 3px solid var(--red);
 }
 .timeline ul li div {
@@ -231,6 +234,10 @@ time {
   transform: translateX(-20rem);
 }
 
+div li time,
+div li p {
+  color: var(--white);
+}
 .timeline ul li.slide-in div {
   transform: none;
   visibility: visible;
@@ -288,9 +295,6 @@ time {
   .column {
     margin-left: 2rem;
     margin-right: 2rem;
-  }
-
-  .column {
     width: calc(100vw - 91px);
     left: 45px;
   }
@@ -300,7 +304,8 @@ time {
 table,
 td,
 tr {
-  background: var(--white2);
+  color: var(--white);
+  background: var(--white);
   border: 2px solid black;
   border-collapse: collapse;
   font-size: 20px;
@@ -310,39 +315,46 @@ tr {
 th {
   color: white;
   border-collapse: collapse;
-  background: var(--orange);
+  background: var(--blue);
   text-transform: uppercase;
 }
 
 td:hover {
   color: var(--red);
-  background: var(--orange);
+  background: var(--blue);
 }
 td p:hover {
-  color: var(--white2);
+  color: var(--white);
+}
+.links {
+  color: var(--blue);
 }
 sl-icon:hover {
   color: var(--red);
 }
+.useful {
+  background-color: var(--blue);
+}
+
 /*--------------------STRUCTURE STYLING FIN------------------------*/
 /* A3 MINIMUM REQUIREMENTS*/
 
 /*SHOELACE UI: CARD & TOGGLE*/
 
 .ph {
-  background-image: url("assets/physicalHealth_01.svg");
-  background-position: right bottom;
-  background-size: 400px;
+  background-image: url("assets/body.png");
+  background-position: bottom;
+  background-size: 350px;
   background-repeat: no-repeat;
 }
 .mh {
-  background-image: url("assets/brain_02.svg");
-  background-position: right bottom;
-  background-size: 400px;
+  background-image: url("assets/mental.png");
+  background-position: bottom;
+  background-size: 300px;
   background-repeat: no-repeat;
 }
 .wp {
-  background-image: url("assets/workplace_01.svg");
+  background-image: url("assets/work.png");
   background-position: right bottom;
   background-size: 400px;
   background-repeat: no-repeat;
@@ -417,90 +429,90 @@ h2 {
   padding: 25px 25px 25px 25px;
   margin: 5px;
   min-height: 100vh;
-  background-color: var(--white2);
+  background-color: var(--white);
   box-shadow: 2px 4px 2px 1px var(--black);
 }
 .flicker {
-  animation: flicker 5s linear infinite both;
+  animation: flicker 25s linear infinite both;
 }
 @keyframes flicker {
   0% {
-    opacity: 1;
+    opacity: 0.3;
   }
   32.98% {
-    opacity: 0;
+    opacity: 0.5;
   }
   33% {
     opacity: 1;
   }
   33.10% {
-    opacity: 0;
+    opacity: 0.3;
   }
   34% {
     opacity: 1;
   }
   34.02% {
-    opacity: 0;
+    opacity: 0.5;
   }
   34.98% {
     opacity: 1;
   }
   35% {
-    opacity: 0;
+    opacity: 0.3;
   }
   35.9% {
     opacity: 1;
   }
   35.92% {
-    opacity: 0;
+    opacity: 0.5;
   }
   36.92% {
     opacity: 1;
   }
   38.98% {
-    opacity: 0;
+    opacity: 0.3;
   }
   39% {
     opacity: 1;
   }
   39.8% {
-    opacity: 0;
+    opacity: 0.5;
   }
   39.82% {
     opacity: 1;
   }
   40% {
-    opacity: 0;
+    opacity: 0.3;
   }
   41% {
     opacity: 1;
   }
   42% {
-    opacity: 0;
+    opacity: 0.5;
   }
   42.12% {
     opacity: 1;
   }
   83.98% {
-    opacity: 0;
+    opacity: 0.3;
   }
   84% {
     opacity: 1;
   }
   84.9% {
-    opacity: 0;
+    opacity: 0.5;
   }
   84.92% {
     opacity: 1;
   }
   97.82% {
-    opacity: 0;
+    opacity: 0.3;
   }
   97.90% {
     opacity: 1;
   }
   98.50% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
