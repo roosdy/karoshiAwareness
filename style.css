@@ -44,6 +44,12 @@ section:nth-child(odd) {
 .content {
   padding: 25px;
 }
+.space {
+  height: 50px;
+}
+.section2 {
+  padding-top: 155px;
+}
 
 /*--------------------------------NAVIGATION--------------------------*/
 .navbar {
@@ -52,8 +58,6 @@ section:nth-child(odd) {
 }
 
 .navbar.is-sticky {
-  background-repeat: no-repeat;
-  background-size: auto;
   border-bottom: 4px solid var(--black);
   position: fixed;
 }
@@ -77,12 +81,7 @@ section:nth-child(odd) {
   width: 100%;
   text-align: center;
 }
-@media screen and (max-width: 600px) {
-  #bttop {
-    position: fixed;
-    left: 50%;
-  }
-}
+
 /*--------------------------------SECTION 1------------------------*/
 /*SVG LOGO*/
 .st0 {
@@ -135,18 +134,6 @@ blockquote p {
 }
 
 /*----------------------------SECTION 2: TIMELINE-------------------------*/
-.bg-image {
-  background-image: url("assets/paperClippings_01.png");
-  filter: blur(25px);
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  animation: 50s para infinite linear;
-  color: var(--white);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .timeline {
   margin-top: -150px;
@@ -243,34 +230,6 @@ div li p {
   visibility: visible;
   opacity: 1;
 }
-@media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 25rem;
-  }
-
-  .timeline ul li:nth-child(even) div {
-    left: -289px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .timeline ul li {
-    margin-left: 2rem;
-  }
-
-  .timeline ul li div {
-    width: calc(100vw - 91px);
-  }
-
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
-
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent var(--color-sec) transparent transparent;
-  }
-}
 
 /*-------------------------------SECTION 3 & 4---------------------- */
 .column {
@@ -283,21 +242,6 @@ div li p {
   content: "";
   display: table;
   clear: both;
-}
-
-@media screen and (max-width: 900px) {
-  .column {
-    width: 25rem;
-    height: auto;
-  }
-}
-@media screen and (max-width: 600px) {
-  .column {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    width: calc(100vw - 91px);
-    left: 45px;
-  }
 }
 
 /*----------------------------SECTION 5-----------------------------*/
@@ -360,7 +304,7 @@ sl-icon:hover {
   background-repeat: no-repeat;
 }
 .ec {
-  background-image: url("assets/economy_01.svg");
+  background-image: url();
   background-position: right bottom;
   background-size: 400px;
   background-repeat: no-repeat;
@@ -389,14 +333,10 @@ sl-icon:hover {
   overflow: hidden;
 }
 .thumbnail {
-  max-height: 250px;
-  max-width: 250px;
   flex: 0 0 auto;
   object-fit: cover;
   cursor: pointer;
-  margin: 5px;
   border: 2px solid var(--black);
-  overflow: hidden;
   transform: scale(0.8);
   transition: all 0.5s;
 }
@@ -516,5 +456,60 @@ h2 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/*-------------MEDIA QUERY-----------------*/
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 25rem;
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+  }
+  .column {
+    float: none;
+    width: 100%;
+    background: none;
+  }
+  #buttContainer {
+    background: var(--red);
+    text-align: center;
+  }
+  #bttop {
+    display: none;
+    position: fixed;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .timeline ul li {
+    margin-left: 2rem;
+  }
+
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--color-sec) transparent transparent;
+  }
+  .column {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: calc(100vw - 91px);
+    left: 45px;
   }
 }

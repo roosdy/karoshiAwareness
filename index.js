@@ -92,11 +92,14 @@ gsap.from(".ec", {
       trigger:".ec"
     }
 }); 
-//-----------------MOBILE MENU BURGER----------------//
+//-----------------HAMBURGER----------------//
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#nav-links');
 
 burgerIcon.addEventListener('click', () => {
+    navbarMenu.classList.toggle('is-active');
+});
+navbarMenu.addEventListener('click', () => {
     navbarMenu.classList.toggle('is-active');
 });
 //-----------------SCROLLING-GALLERY-------------------//
