@@ -299,13 +299,13 @@ sl-icon:hover {
 }
 .wp {
   background-image: url("assets/work.png");
-  background-position: right bottom;
+  background-position: bottom;
   background-size: 400px;
   background-repeat: no-repeat;
 }
 .ec {
-  background-image: url();
-  background-position: right bottom;
+  background-image: url("assets/economy.png");
+  background-position: bottom;
   background-size: 400px;
   background-repeat: no-repeat;
 }
