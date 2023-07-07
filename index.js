@@ -1,16 +1,16 @@
 //--GSAP ANIMATION --//
-gsap.from('.navbar', { duration: 2, y: '-100%', ease: 'bounce' });
+gsap.from(".navbar", { duration: 2, y: "-100%", ease: "bounce" });
 //----------------STICKY NAVBAR + falling animation------------------//
 window.addEventListener("scroll", function () {
   const navBar = document.querySelector(".navbar");
-  
+
   if (window.pageYOffset > 0) {
-  navBar.classList.add("is-sticky");
+    navBar.classList.add("is-sticky");
   } else {
-  navBar.classList.remove("is-sticky");
+    navBar.classList.remove("is-sticky");
   }
 });
-  
+
 //------SCROLLTRIGGER for each section----//
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,69 +18,69 @@ gsap.from(".section1", {
   duration: 1,
   x: "-1500",
   ease: "linear",
-    scrollTrigger: {
-      trigger:".section1"
-    }
+  scrollTrigger: {
+    trigger: ".section1",
+  },
 });
 gsap.from(".section2", {
   duration: 1,
   x: "1500",
   ease: "linear",
-    scrollTrigger: {
-      trigger:".section2"
-    }
+  scrollTrigger: {
+    trigger: ".section2",
+  },
 });
 
 gsap.from(".section3", {
   duration: 1,
   x: "-1500",
   ease: "linear",
-    scrollTrigger: {
-      trigger:".section3"
-    }
+  scrollTrigger: {
+    trigger: ".section3",
+  },
 });
 gsap.from(".section4", {
   duration: 1,
   x: "1500",
   ease: "linear",
-    scrollTrigger: {
-      trigger:".section4"
-    }
-}); 
-  gsap.from(".section5", {
+  scrollTrigger: {
+    trigger: ".section4",
+  },
+});
+gsap.from(".section5", {
   duration: 1,
   x: "-1500",
   ease: "fade",
-    scrollTrigger: {
-      trigger:".section5"
-    }
+  scrollTrigger: {
+    trigger: ".section5",
+  },
 });
 //Column animation - upward trigger//
 gsap.from(".ph", {
   duration: 1,
   y: "250",
   ease: "linear",
-    scrollTrigger: {
-      trigger:".ph"
-    }
+  scrollTrigger: {
+    trigger: ".ph",
+  },
 });
 gsap.from(".mh", {
   duration: 1,
   y: "250",
   delay: 0.5,
   ease: "linear",
-    scrollTrigger: {
-      trigger:".mh"
-    }
+  scrollTrigger: {
+    trigger: ".mh",
+  },
 });
 gsap.from(".wp", {
   duration: 1,
   y: "250",
   delay: 1,
   ease: "linear",
-    scrollTrigger: {
-      trigger:".wp"
-    }
+  scrollTrigger: {
+    trigger: ".wp",
+  },
 });
 
 gsap.from(".ec", {
@@ -88,19 +88,19 @@ gsap.from(".ec", {
   y: "250",
   delay: 1.5,
   ease: "linear",
-    scrollTrigger: {
-      trigger:".ec"
-    }
-}); 
-//-----------------HAMBURGER----------------//
-const burgerIcon = document.querySelector('#burger');
-const navbarMenu = document.querySelector('#nav-links');
-
-burgerIcon.addEventListener('click', () => {
-    navbarMenu.classList.toggle('is-active');
+  scrollTrigger: {
+    trigger: ".ec",
+  },
 });
-navbarMenu.addEventListener('click', () => {
-    navbarMenu.classList.toggle('is-active');
+//-----------------HAMBURGER----------------//
+const burgerIcon = document.querySelector("#burger");
+const navbarMenu = document.querySelector("#nav-links");
+
+burgerIcon.addEventListener("click", () => {
+  navbarMenu.classList.toggle("is-active");
+});
+navbarMenu.addEventListener("click", () => {
+  navbarMenu.classList.toggle("is-active");
 });
 //-----------------SCROLLING-GALLERY-------------------//
 
@@ -138,7 +138,6 @@ function autoPlay() {
 }
 let Play = setInterval(autoPlay, 30);
 
-
 //---------------------TIMELINE CARD-------------------------//
 (function () {
   const items = document.querySelectorAll(".timeline li");
@@ -170,7 +169,9 @@ let Play = setInterval(autoPlay, 30);
 })();
 //-----------------------BACK TO TOP Button---------------------------//
 const toTop = document.getElementById("bttop");
-window.onscroll = function () {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -178,7 +179,7 @@ function scrollFunction() {
   } else {
     toTop.style.display = "none";
   }
-  }
+}
 
 function topFunction() {
   document.body.scrollTop = 0;

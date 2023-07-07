@@ -3,12 +3,15 @@
 
 :root {
   --white: #f5f5f5;
-  --black: #222323;
+  --white: #222323;
   --red: #a82814;
   --orange: #f4a24c;
   --green: #4e9142;
   --blue: #0ea5e9;
   background-color: var(--white);
+}
+body {
+  background-color: black;
 }
 
 *,
@@ -24,21 +27,21 @@ html {
   width: 100%;
 }
 section {
-  min-height: 100vh;
+  min-height: 0vh;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 section:nth-child(even) {
   background-color: var(--white);
 }
 section:nth-child(odd) {
-  background-color: var(--white);
+  background-color: black;
 }
 
 .header {
   margin-top: 55px;
   transform: rotate(1.4deg);
-  border: var(--white);
-  color: var(--white);
+  /* border: var(--white);
+  color: var(--white); */
   background-color: var(--red);
 }
 .content {
@@ -51,14 +54,19 @@ section:nth-child(odd) {
   padding-top: 155px;
 }
 
+.logo-xl {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  z-index: -1;
+}
 /*--------------------------------NAVIGATION--------------------------*/
 .navbar {
-  border-bottom: 4px solid var(--black);
   width: 100%;
 }
 
 .navbar.is-sticky {
-  border-bottom: 4px solid var(--black);
   position: fixed;
 }
 
@@ -83,40 +91,13 @@ section:nth-child(odd) {
 }
 
 /*--------------------------------SECTION 1------------------------*/
-/*SVG LOGO*/
-.st0 {
-  fill: var(--white);
-}
-.st1 {
-  fill: var(--black);
-  opacity: 0.3;
-  stroke: var(--orange);
-  stroke-miterlimit: 10;
-}
-.st2 {
-  font-family: "Open Sans";
-}
-.st3 {
-  font-size: 137.7131px;
-}
-.st4 {
-  fill: var(--red);
-  stroke: var(--orange);
-  stroke-miterlimit: 10;
-}
-.st5 {
-  font-family: "SoukouMincho";
-}
-.st6 {
-  font-size: 205.0117px;
-}
-.shadow {
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+.section1 {
+  margin-top: 25px;
 }
 /*----------------------------*/
 blockquote {
   background: var(--white);
-  border-left: 10px solid var(--black);
+  border-left: 10px solid var(--white);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -327,7 +308,7 @@ sl-icon:hover {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  width: 100%;
+  width: 800px;
   margin: 0 auto;
   transition: all 0.5 s;
   overflow: hidden;
@@ -336,7 +317,7 @@ sl-icon:hover {
   flex: 0 0 auto;
   object-fit: cover;
   cursor: pointer;
-  border: 2px solid var(--black);
+  border: 2px solid var(--white);
   transform: scale(0.8);
   transition: all 0.5s;
 }
@@ -360,24 +341,28 @@ sl-icon:hover {
 /*-------------------SVG---------------------------*/
 h1 {
   font-family: "Work Sans", sans-serif;
+  color: #f5f5f5;
 }
 h2 {
   font-family: "Roboto", sans-serif;
 }
 .container .columns .column {
-  border: 2px solid var(--black);
+  border: 2px solid var(--white);
   padding: 25px 25px 25px 25px;
   margin: 5px;
   min-height: 100vh;
-  background-color: var(--white);
-  box-shadow: 2px 4px 2px 1px var(--black);
+  /* background-color: var(--white); */
+  box-shadow: 2px 4px 2px 1px var(--white);
 }
 .flicker {
-  animation: flicker 25s linear infinite both;
+  animation: flicker 10s linear infinite both;
 }
 @keyframes flicker {
   0% {
     opacity: 0.3;
+  }
+  12.98% {
+    opacity: 1.9;
   }
   32.98% {
     opacity: 0.5;
@@ -432,6 +417,9 @@ h2 {
   }
   42.12% {
     opacity: 1;
+  }
+  73.98% {
+    opacity: 0;
   }
   83.98% {
     opacity: 0.3;
